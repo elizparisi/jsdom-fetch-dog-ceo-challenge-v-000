@@ -1,7 +1,7 @@
 console.log('%c HI', 'color: firebrick')
 
-const dogList = document.querySelector("#dog-breeds")
-const dropdown = document.querySelector("#breed-dropdown")
+const dogList = document.querySelector("#dog-breeds");
+const dropdown = document.querySelector("#breed-dropdown");
 
 // Approach 1: Stateful
 // store all the breeds in an array
@@ -16,10 +16,16 @@ const dropdown = document.querySelector("#breed-dropdown")
 // State
 let breedList = []
 
+document.addEventListener('DOMContentLoaded', function() {
+    fetchimgUrl();
+    fetchBreed();
+});
+
 // added the event listener to the dropdown
 dropdown.addEventListener("change", event => {
   // got the selected value
   const letter = event.target.value
+  
 
   // filter the array
   const filteredBreeds = breedList.filter(function(breed) {
